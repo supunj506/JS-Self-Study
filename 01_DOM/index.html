@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS DOM</title>
+</head>
+<body>
+<h1>Hello JavaScript</h1>
+<h2 >Institute of Software Engineering</h2>
+<h2 id="h2">IJSE</h2>
+<h3>Panadura & Galle</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at deleniti dolore fugiat illo inventore labore
+    laudantium, magnam nobis officia officiis quam quas repellat repudiandae, sit suscipit tempore ut voluptatum?</p>
+<hr>
+<input type="text" id="input">
+<button id="text">change text</button>
+<button id="png">set photo</button>
+<button id="list">set list</button>
+<input   id="range" type="range" min="0" max="100">
+<input  id ="color"  type="color">
+<hr>
+<img src="" alt="" width="500px" id="img">
+<hr>
+<ul id="ul">
+
+</ul>
+
+<script>
+    document.getElementsByTagName("h2")[1].innerText = "successfully add !!!";
+    document.getElementById("h2").innerText = "by ID";
+    document.getElementById("text").addEventListener("click",function(){
+        document.getElementById("h2").innerText = document.getElementById("input").value;
+        document.getElementById("input").value="";
+    });
+    document.getElementById("png").addEventListener("click",function(){
+        document.getElementById("img").setAttribute('src',document.getElementById("input").value);
+        alert(document.getAttribute());
+        alert("mdsdkms");
+        document.getElementById("input").value="";
+    });
+    document.getElementById("list").addEventListener("click",function(){
+       document.getElementById("ul").innerHTML+="<li>"+document.getElementById("input").value+"</li>";
+       document.getElementById("input").value="";
+    });
+
+    document.getElementById("range").addEventListener("click",function(){
+       document.getElementsByTagName("h1")[0].style.fontSize= ""+document.getElementById("range").value+"px";
+    });
+    document.getElementById("color").addEventListener("mouseleave",function (){
+        document.getElementById("h2").style.color=""+document.getElementById("color").value+"";
+    })
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+</head>
+<body>
+<h1>Hello JavaScript</h1>
+<h2 >Institute of Software Engineering</h2>
+<h2 id="h2">IJSE</h2>
+<h3>Panadura & Galle</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at deleniti dolore fugiat illo inventore labore
+  laudantium, magnam nobis officia officiis quam quas repellat repudiandae, sit suscipit tempore ut voluptatum?</p>
+<hr>
+<input type="text" id="input">
+<button id="text" class="button">change text</button>
+<button id="png" class="button">set photo</button>
+<button id="listUp" class="button">set list up</button>
+<button id="listDown" >set list down</button>
+<input   id="range" type="range" min="0" max="100">
+<input  id ="color"  type="color">
+<hr>
+<img src="" alt="" width="500px" id="img">
+<hr>
+<ul id="ul">
+  <li>GDSE</li>
+
+</ul>
+
+<script src="/assets/lib/jquery/jquery-3.6.4.min.js"></script>
+<script>
+  // document.getElementsByTagName("h2")[1].innerText = "successfully add !!!";
+  $("#h2").text("successfully add !!!")
+
+  // document.getElementById("h2").innerText = "by ID";
+  $("#h2").text("by ID");
+
+
+  // --------------------------change default selector-----------------------------------
+  // var m = jQuery.noConflict();
+  // m("#h2").text("kdkfdmkm");
+
+  $(".button").css(' color','red',);
+  // $(".button").css('fontSize','30px');
+
+
+
+  // document.getElementById("text").addEventListener("click",function(){
+  //   document.getElementById("h2").innerText = document.getElementById("input").value;
+  //   document.getElementById("input").value="";
+  // });
+  // document.getElementById("png").addEventListener("click",function(){
+  //   document.getElementById("img").setAttribute('src',document.getElementById("input").value);
+  //   document.getElementById("input").value="";
+  // });
+  // document.getElementById("list").addEventListener("click",function(){
+  //   document.getElementById("ul").innerHTML+="<li>"+document.getElementById("input").value+"</li>";
+  //   document.getElementById("input").value="";
+  // });
+  //
+  // document.getElementById("range").addEventListener("click",function(){
+  //   document.getElementsByTagName("h1")[0].style.fontSize= ""+document.getElementById("range").value+"px";
+  // });
+  // document.getElementById("color").addEventListener("mouseleave",function (){
+  //   document.getElementById("h2").style.color=""+document.getElementById("color").value+"";
+  // })
+
+  // $("#text"). click(function(){
+  //   alert("running");
+  //   $("h1").css('color','red');
+  // });
+  $("#text").click(function(){
+    $("#h2").text($("#input").val());
+    $("#input").val("");
+  })
+  $("#range").click(function(){
+    $("*").css('fontSize',$("#range").val()+"px");
+    // alert($("#range").val());
+    // $("*").css('color',"red");
+  })
+// set list item to up----------------------------------------
+//   $("#listUp").click(function(){
+//     // $("#ul").append("<li>"+$("#input").val()+"</li>")
+//       $("#ul").html("<li>"+$("#input").val()+"</li>"+$("#ul").html());
+//       clear();
+//   })
+
+  $("#listUp").click(function(){
+      $("#ul").prepend("<li>"+$("#input").val()+"</li>");
+      clear();
+  })
+
+
+  // set list item to down-------------------------------------
+  // $("#listDown").click(function(){
+  //    $("#ul").html($("#ul").html()+"<li>"+$("#input").val()+"</li>");
+  //    clear();
+  // });
+  $("#listDown").click(function(){
+      $("#ul").append("<li>"+$("#input").val()+"</li>");
+      clear();
+  })
+
+  // set image url to img src-----------------------
+  $("#png").click(function(){
+      alert($("#img").attr());
+      // $("#img").attr('src',$("#input").val());
+      // $("#img").attr('src',getValue());
+      clear();
+  })
+
+
+
+function clear(){
+      $("#input").val("");
+}
+function getValue(){
+      return $("#input").val();
+}
+
+</script>
+</body>
+</html>

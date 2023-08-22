@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="/assets/lib/jquery/jquery-3.6.4.min.js"></script>
+<script>
+    let customer = {
+        id: "C001",
+        name: "Kasun",
+        address: "Colomdo",
+        contact: `0763349417`
+    }
+
+    /* let a = {}
+
+     Object.defineProperty(a, 'id',
+         {
+             function:id= function set(value) {
+                 id = value;
+             }
+         },
+         {
+             function:id= function get() {
+                 return id;
+             }
+         });*/
+/*--------------------------------------------------------------------------*/
+    // Accessor Property
+
+    // make one
+
+    let a = {};
+    Object.defineProperty(a, 'id',
+        {
+            set(value) {
+                id = value;
+            }
+        },
+        {
+            get() {
+                return id;
+            }
+        });
+
+    Object.getOwnPropertyDescriptor(a, 'id');
+    /*  {get: undefined, enumerable: false, configurable: false, set: ƒ}    */
+
+    a.id="A001"; /* methanadi value eka watenne set eka through*/
+
+    a.id; /* kiyala illuwama enne get eken */
+
+    /* methanadi enumerable and configurable witharai enne ekath default false */
+
+
+
+</script>
+</body>
+</html>

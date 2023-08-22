@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event In JQuery</title>
+  <style>
+    input:focus{
+      outline: none ;
+      border-color: chartreuse;
+      /*box-shadow: 0 0 10px #719ECE;*/
+
+    }
+    .inputDiv{
+        width: 100%;
+        height: 5vh;
+
+    }
+    .inputDiv>p {
+        margin: 0;
+        font-size: small;
+    }
+  </style>
+</head>
+<body id="body">
+<h1>Hello JavaScript</h1>
+<h2 >Institute of Software Engineering</h2>
+<h2 id="h2">IJSE</h2>
+<h3>Panadura & Galle</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at deleniti dolore fugiat illo inventore labore
+  laudantium, magnam nobis officia officiis quam quas repellat repudiandae, sit suscipit tempore ut voluptatum?</p>
+<p id="move">MOUSE IS RUNNING</p>
+<hr>
+<input type="text" id="input">
+<button id="text" class="button">change text</button>
+<button id="png" class="button">set photo</button>
+<button id="listUp" class="button">set list up</button>
+<button id="listDown" >set list down</button>
+<input   id="range" type="range" min="0" max="100">
+<input  id ="color"  type="color">
+<hr>
+<img src="" alt="" width="500px" id="img">
+<hr>
+<ul id="ul">
+  <li>GDSE</li>
+
+</ul>
+<hr>
+<div id="div" style="width: 200px ; height: 200px ; background-color: blue"></div>
+<!--onmousemove="console.log('running')"-->
+<!--<hr>-->
+
+<!--<div onmousemove=onMove() style="background-color: rebeccapurple;width: 100px;height: 100px"></div>-->
+<hr>
+<hr>
+<div class="inputDiv">
+    <input type="text" id="input01">
+    <p><small id="error1"></small></p>
+</div>
+
+<div class="inputDiv">
+    <input type="text" id="input02">
+    <p><small id="error2"></small></p>
+</div>
+
+<div class="inputDiv">
+    <input type="text" id="input03">
+    <p><small id="error3"></small></p>
+
+</div>
+
+
+
+
+
+
+
+<script src="/assets/lib/jquery/jquery-3.6.4.min.js"></script>
+<script>
+
+// function onMove(){
+//   console.log("Running Method");
+// }
+// // $("#text").off();
+// $("#text").on("click",function (){
+//   console.log("run click");
+// })
+// // $("#text").off();
+//
+// $("#text").on("dblclick",function (){
+//   console.log("run dblclick");
+// })
+// $("#text").off("dblclick");
+//
+// $("#input01").focus();
+
+// using key property
+// $("#input01").keydown(function (event){
+//   console.log(event.key);
+//   if(event.key=="Enter"){
+//     $("#input02").focus();
+//   }
+// });
+//
+// $("#input02").keydown(function (event){
+//   console.log(event.key);
+//   if(event.key=="Enter"){
+//     $("#input03").focus();
+//   }
+// });
+// $("#input01").focus();
+//
+// // using code property
+// $("#input01").keydown(function (event){
+//   console.log(event.key);
+//   if(event.code=="Enter"){
+//     $("#input02").focus();
+//   }
+// });
+//
+// $("#input02").keydown(function (event){
+//   console.log(event.key);
+//   if(event.code=="Enter"){
+//     $("#input03").focus();
+//   }
+// });
+// $("#input03").keydown(function (event){
+//   if(event.key=="Enter"){
+//     $("#h2").text($("#input03").val());
+//   }
+// })
+// }
+
+//
+// $("#input01").keydown(function (){
+//     console.log("key down work");
+// });
+//
+// $("#input01").keyup(function (){
+//     console.log("key up work");
+// });
+// Pattern cusName=Pattern.compile("^[A-z ]{3,30}$")
+var idaregex =/^[0-9]{3,4}$/;
+
+$("#input01").keyup(function (event){
+    // console.log("key down work");
+    // console.log(event)
+    let text = $('#input01').val();
+    console.log(text);
+    if(!idaregex.test(text)){
+        $('#input01').css('border-color', 'red');
+        $('#error1').text("Wrong Input : 001")
+        $("#error1").css('color','red')
+
+
+    }else {
+        $("#input01").css('border-color', 'chartreuse');
+        $('#error1').text("Done");
+        $("#error1").css('color','chartreuse')
+        if(event.key==="Enter"){
+                $("#input02").focus();
+                // alert("dmks");
+        }
+    }
+});
+// $("#div").click(function (event){
+//     console.log(event);
+//     console.log(event.clientX,event.clientY);
+//
+// })
+
+</script>
+</body>
+</html>

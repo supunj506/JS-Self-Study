@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="body">
+<main id="main">
+    <p id="para">mouse running</p>
+    <p id="efect">I'm Software Engineer</p>
+    <hr>
+    <hr>
+    <hr>
+    <h1 id="number">1</h1>
+    <br>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</main>
+<script src="/assets/lib/jquery/jquery-3.6.4.min.js"></script>
+<script>
+    // $("body").css(
+    //     'overflowX',
+    //     'hidden'
+    // )
+    // $("body").css(
+    //     'overflowY',
+    //     'hidden'
+    // )
+  // $("html").mousemove(function (event){
+  //   console.log("run");
+  //   $("#para").css('position','absolute');
+  //   $("#para").css('left',event.clientX);
+  //   $("#para").css('top',event.clientY-10);
+  // })
+  // let text=$("#efect").text();
+  // $(window).mousemove(function (event){
+  //     console.log("run");
+  //     $("#para").css('position','absolute');
+  //     $("#para").css('position','absolute');
+  //     $("#para").css('left',event.pageX-40);
+  //     $("#para").css('top',event.pageY-10);
+  //
+  // });
+  //
+  // var customer = {
+  //     id: "C002",
+  //     name:"kamal",
+  //     address:"Panadura",
+  //     email:"kamal3233@gmail.com"
+  // };
+  // console.log(customer);
+  //   call();
+  //
+  //   function call(){
+  //       console.log("run method");
+  //   }
+
+    // console.log(is);
+    //
+    // // const myName ="supun";
+    // let myName ="Supun";
+    //
+    // var is  ="after declare";
+    //
+    // console.log(is);
+    //
+    let count = 1;
+
+    let aaa =$("#efect").text();
+    function animate () {
+        $("#efect").text(aaa.substring(0, count));
+        count++;
+        if (count == aaa.length+20) {
+            count = 1;
+        }
+    }
+    setInterval(animate,100);
+
+
+
+    let num = $("#number").text();
+
+    function run ( ){
+        $("#number").text(num);
+        num++;
+    }
+    let intervalId;
+
+    $("#start").click(function (){
+            clearInterval(intervalId);
+            intervalId = setInterval(run,100);
+    });
+
+    $("#stop").click(function (){
+        clearInterval(intervalId);
+    });
+
+    $("#efect").css("position","absolute");
+
+    $(window).mousemove(function (event){
+        console.log("running");
+        $("#efect").css("left",event.pageX);
+        $("#efect").css("top",event.pageY);
+
+
+    })
+
+
+</script>
+</body>
+</html>
