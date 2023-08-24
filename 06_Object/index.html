@@ -8,12 +8,12 @@
 
 <script src="/assets/lib/jquery/jquery-3.6.4.min.js"></script>
 <script>
-    let customer = {
-        id: "C001",
-        name: "Kasun",
-        address: "Colomdo",
-        contact: `0763349417`
-    }
+    // let customer = {
+    //     id: "C001",
+    //     name: "Kasun",
+    //     address: "Colomdo",
+    //     contact: `0763349417`
+    // }
 
     /* let a = {}
 
@@ -54,6 +54,29 @@
     a.id; /* kiyala illuwama enne get eken */
 
     /* methanadi enumerable and configurable witharai enne ekath default false */
+
+    /*---------------------------------------------------------------------------------------*/
+
+    /* default false wela ena descriptor hadanakotama true bandanna puluwan */
+
+    let b = {};
+    Object.defineProperty(b, 'id',
+        {
+            set(value) {
+                id = value;
+            },
+            enumerable:true,
+            configurable:true
+        },
+        {
+            get() {
+                return id;
+            }
+        });
+
+    Object.getOwnPropertyDescriptor(b, 'id');
+
+    /*test code*/
 
 
 
